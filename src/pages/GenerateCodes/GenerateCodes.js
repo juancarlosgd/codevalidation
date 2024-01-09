@@ -5,8 +5,9 @@ import { Table, Button } from 'antd';
 import axios from 'axios';
 import * as FileSaver from 'file-saver';
 import * as XLSX from 'xlsx';
-import { excelDataState } from '../state';
-import FileUpload from '../components/FileUpload';
+import { excelDataState } from '../../state';
+import FileUpload from '../../components/fileUpload/FileUpload';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const GenerateCodes = () => {
   const [excelData, setExcelData] = useRecoilState(excelDataState);
@@ -70,7 +71,7 @@ const GenerateCodes = () => {
   };
 
   return (
-    <div>
+    <div className='me-3 ms-3'>
       <h1>Generar Códigos de Verificación</h1>
       <FileUpload onClearData={handleClearData} />
       <Button onClick={encryptAndAddData} disabled={selectedRowKeys.length === 0}>

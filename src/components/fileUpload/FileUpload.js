@@ -1,8 +1,8 @@
-// src/components/FileUpload.js
+// src/components/FileUpload/FileUpload.js
 import React, { useState } from 'react';
 import * as XLSX from 'xlsx';
 import { useSetRecoilState } from 'recoil';
-import { excelDataState } from '../state';
+import { excelDataState } from '../../state';
 import { Upload, Button, message } from 'antd';
 import { InboxOutlined, UploadOutlined } from '@ant-design/icons';
 

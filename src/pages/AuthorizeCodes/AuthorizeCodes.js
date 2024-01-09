@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { Table, Button, message,Checkbox } from 'antd';
 import axios from 'axios';
 import moment from 'moment';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const ActivateCodes = () => {
     const [data, setData] = useState([]);
@@ -83,11 +84,11 @@ const ActivateCodes = () => {
     };
 
     return (
-        <div>
+        <div className='ms-3 me-3'>
           <h1>Activar Códigos de Verificación</h1>
             <Button onClick={fetchCodes}>Consultar Códigos</Button>
-            <Button onClick={activateCodes} disabled={!selectedRowKeys.length}>Activar Códigos</Button>
-            <Table rowSelection={rowSelection} columns={columns} dataSource={data} rowKey="DataID" />
+            <Button onClick={activateCodes} disabled={!selectedRowKeys.length} style={{ marginLeft: 8, marginRight:8 }}>Activar Códigos</Button>
+            <Table rowSelection={rowSelection} columns={columns} dataSource={data} style={{ marginTop: 16 }} rowKey="DataID" />
         </div>
     );
 };
